@@ -8,4 +8,12 @@ const getRequest = async (url) => {
   return httpRequest.send();
 };
 
-module.exports = { getRequest };
+const postRequest = async (url, body) => {
+  const httpRequest = request(requestUrl).post(url);
+  return httpRequest.send(body);
+};
+
+module.exports = { 
+  getRequest,
+  postRequest
+ };

@@ -8,8 +8,10 @@ describe('Google Search', function() {
   });
 
   it('example', async function theTestFunction() {
-    await driver.get('http://www.google.com/');                   
-    await driver.findElement(By.className('gLFyf gsfi')).sendKeys('webdriver');   
+    await driver.get('https://www.dell.com/en-us');                   
+    await driver.findElement(By.id('mh-search-input')).sendKeys('webdriver');  
+    let searchButton = await driver.findElement(By.className('mh-search-btn mh-search-submit'));
+    await searchButton.click();
     await driver.wait(until.elementLocated(By.css('sdfsdfsdfsdf')),100000);
     // let savedVariableExample = await driver.wait(until.elementLocated(By.css('sdfsdfsdfsdf')),100000);
     // await driver.findElement(By.name('btnK')).click();                      // (3)
