@@ -4,7 +4,7 @@ const assert = require("assert");
 require("chromedriver");
 
 
-suite(function(env) {
+// suite(function(env) {
     describe.skip('First script', function() {
         let driver;
 
@@ -35,4 +35,4 @@ suite(function(env) {
         });
 
     });
-});
+// });
