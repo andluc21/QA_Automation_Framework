@@ -9,7 +9,7 @@ require("chromedriver");
         let driver;
 
         beforeEach(async function() {
-            driver = await new Builder().forBrowser('chrome').build();
+            driver = await new Builder().forBrowser('chrome').build(); // driver = new Builder().forBrowser('firefox').build();
         });
 
         afterEach(async () => await driver.quit());

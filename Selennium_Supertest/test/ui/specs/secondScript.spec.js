@@ -2,7 +2,7 @@ const { By, Builder } = require('selenium-webdriver');
 const assert = require("assert");
 const requestUrl = process.env.DEV_UI_ENDPOINT;
 
-describe('First script', function() {
+describe.skip('First script', function() {
     let driver;
 
     beforeEach(async function() {
