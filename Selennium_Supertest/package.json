@@ -2,7 +2,7 @@
     "name": "js-automation-framework",
     "version": "1.0.0",
     "scripts": {
-        "test:ui": "npx mocha test/ui/specs/**/*.spec.js test/ui/s.conf.js  --timeout 600000",
+        "test:ui": "npx mocha test/ui/specs/**/*.spec-e2e.js test/ui/mocha.conf.js  --timeout 600000",
         "test:api": "jest --config ./test/api/jest-e2e.json --testTimeout=60000"
     },
     "author": "Luca Andolina",
