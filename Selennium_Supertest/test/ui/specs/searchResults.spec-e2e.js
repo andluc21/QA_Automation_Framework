@@ -19,10 +19,17 @@ describe('Google Search', function() {
     let resultMessage = await driver.findElement(By.xpath('//*[@class="zero-results-extended-general-frame-text"]'));
     let resultValue = await resultMessage.getText();
     assert.equal('Sorry, there are no results for "webdriver"', resultValue);
+  });
 
-    let inputMessage = await driver.findElement(By.xpath('//*[@class="zero-results-extended-general-frame-text-keyword"]'));
-    let inputValue = await inputMessage.getText();
-    assert.equal('webdriver', inputValue);
+  it('Searching for the term "inspiron 16 laptop" returns results', async function theTestFunction() {
+    await driver.get(`${requestUrl}`);                   
+    await driver.findElement(By.id('mh-search-input')).sendKeys('inspiron 16 laptop');  
+    let searchButton = await driver.findElement(By.className('mh-search-btn mh-search-submit'));
+    await searchButton.click();
+
+    let resultMessage = await driver.findElement(By.xpath('//*[@class="bc-category-label icon-home"]'));
+    let resultValue = await resultMessage.getText();
+    assert.equal('Showing results for inspiron 16 laptopin', resultValue);
 
   });
 

@@ -13,7 +13,13 @@ const postRequest = async (url, body) => {
   return httpRequest.send(body);
 };
 
+const putRequest = async (url, body) => {
+  const httpRequest = request(requestUrl).put(url);
+  return httpRequest.send(body);
+};
+
 module.exports = { 
   getRequest,
-  postRequest
+  postRequest,
+  putRequest,
  };
