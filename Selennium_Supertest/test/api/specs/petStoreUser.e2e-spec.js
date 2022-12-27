@@ -1,4 +1,5 @@
 const { getRequest, postRequest, putRequest } = require("../services.js/httpUtil");
+const password = process.env.USER_PASS;
 const username = 'madeUpUserName100'
 
 describe("Pet Store Inventory", () => {
@@ -11,11 +12,11 @@ describe("Pet Store Inventory", () => {
     const payload = {
       id: 50010,          
       username,
-      firstName: "string",
-      lastName: "string",
-      email: "string",
-      password: "string",
-      phone: "string",
+      firstName: "Luca",
+      lastName: "Andolina",
+      email: "luca.andolina@gmail.com",
+      password,
+      phone: "343-943-2345",
       userStatus: 0,
     };
 
@@ -24,15 +25,15 @@ describe("Pet Store Inventory", () => {
     console.log(postResponse.body);
   });
 
-  it("PUT/ Updating a specific user is successful", async () => {
+  xit("PUT/ Updating a specific user is successful", async () => {
     const payload = {
       id: 50010,      
       username,
-      firstName: "updatedFirstName",
-      lastName: "string",
-      email: "string",
-      password: "string",
-      phone: "string",
+      firstName: "Luca",
+      lastName: "Andolina",
+      email: "updatedEmail@comcast.net",
+      password,
+      phone: "343-943-2345",
       userStatus: 0,
     };
 
@@ -44,6 +45,8 @@ describe("Pet Store Inventory", () => {
   it("GET/ Retrieving the newly created user by name is successful", async () => {
     const getResponse = await getRequest(`/user/${username}`);
     expect(getResponse.status).toEqual(200);
-    console.log(getResponse.body);
+    expect(getResponse.body.username).toEqual(username);
+    expect(getResponse.body.password).toEqual(password);
+    expect(getResponse.body.email).toEqual("updatedEmail@comcast.net");
   });
 });
