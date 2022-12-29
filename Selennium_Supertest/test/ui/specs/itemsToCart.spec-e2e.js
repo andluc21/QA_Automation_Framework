@@ -9,7 +9,7 @@ describe('Google Search', function() {
     driver = new Builder().forBrowser('chrome').build();
   });
 
-  it('Sign in', async function addItemToCart() {
+  it('Filters laptops by selection and successfully adds 1 item to the cart', async function addItemToCart() {
     
     await driver.get(`${requestUrl}`);   
     
@@ -24,7 +24,6 @@ describe('Google Search', function() {
     let cartItem2 = await driver.findElement(By.className('ps-image-area'));
     await driver.wait(until.elementIsVisible(cartItem2),1000);
     await cartItem2.click();
-
 
     let cartItem3 = await driver.findElement(By.className('btn btn-success dellmetrics-browseconfig atc-cta-mfe rounded-sm'));
     await driver.wait(until.elementIsVisible(cartItem3),1000);
