@@ -14,19 +14,19 @@ describe('Google Search', function() {
     await driver.get(`${requestUrl}`);   
     
     let laptopsLink = await driver.findElement(By.className('hpg-cat-item-wrap dds__px-2'));
-    await driver.wait(until.elementIsVisible(laptopsLink),1000);
+    await driver.wait(until.elementIsVisible(laptopsLink),500);
     await laptopsLink.click();
 
     let cartItem = await driver.findElement(By.id('refinement-37868'));
-    await driver.wait(until.elementIsVisible(cartItem),1000);
+    await driver.wait(until.elementIsVisible(cartItem),500);
     await cartItem.click();
 
     let cartItem2 = await driver.findElement(By.className('ps-image-area'));
-    await driver.wait(until.elementIsVisible(cartItem2),1000);
+    await driver.wait(until.elementIsVisible(cartItem2),3000);
     await cartItem2.click();
 
     let cartItem3 = await driver.findElement(By.className('btn btn-success dellmetrics-browseconfig atc-cta-mfe rounded-sm'));
-    await driver.wait(until.elementIsVisible(cartItem3),1000);
+    await driver.wait(until.elementIsVisible(cartItem3),3000);
     await cartItem3.click();
 
     let resultMessage = await driver.findElement(By.className('cart mh-flyout-link'));
