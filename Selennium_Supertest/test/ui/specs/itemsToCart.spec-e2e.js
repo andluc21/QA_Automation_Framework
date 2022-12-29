@@ -14,11 +14,11 @@ describe('Google Search', function() {
     await driver.get(`${requestUrl}`);   
     
     let laptopsLink = await driver.findElement(By.className('hpg-cat-item-wrap dds__px-2'));
-    await driver.wait(until.elementIsVisible(laptopsLink),500);
+    await driver.wait(until.elementIsVisible(laptopsLink),3000);
     await laptopsLink.click();
 
     let cartItem = await driver.findElement(By.id('refinement-37868'));
-    await driver.wait(until.elementIsVisible(cartItem),500);
+    await driver.wait(until.elementIsVisible(cartItem),3000);
     await cartItem.click();
 
     let cartItem2 = await driver.findElement(By.className('ps-image-area'));
