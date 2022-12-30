@@ -25,7 +25,7 @@ describe("Pet Store Inventory", () => {
     console.log(postResponse.body);
   });
 
-  xit("PUT/ Updating a specific user is successful", async () => {
+  it("PUT/ Updating a specific user is successful", async () => {
     const payload = {
       id: 50010,      
       username,
