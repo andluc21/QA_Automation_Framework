@@ -2,7 +2,7 @@ const {Builder, By, until} = require('selenium-webdriver');
 require("dotenv").config();
 const requestUrl = process.env.DEV_UI_ENDPOINT;
 
-describe('Google Search', function() {
+describe('Adds laptop item to dell cart', function() {
   let driver;
 
   beforeEach(() => {
@@ -17,17 +17,17 @@ describe('Google Search', function() {
     await driver.wait(until.elementIsVisible(laptopsLink),3000);
     await laptopsLink.click();
 
-    let cartItem = await driver.findElement(By.id('refinement-37868'));
-    await driver.wait(until.elementIsVisible(cartItem),3000);
-    await cartItem.click();
+    let laptopsCategory = await driver.findElement(By.id('refinement-37868'));
+    await driver.wait(until.elementIsVisible(laptopsCategory),3000);
+    await laptopsCategory.click();
 
-    let cartItem2 = await driver.findElement(By.className('ps-image-area'));
-    await driver.wait(until.elementIsVisible(cartItem2),3000);
-    await cartItem2.click();
+    let specificLaptop = await driver.findElement(By.className('ps-image-area'));
+    await driver.wait(until.elementIsVisible(specificLaptop),3000);
+    await specificLaptop.click();
 
-    let cartItem3 = await driver.findElement(By.className('btn btn-success dellmetrics-browseconfig atc-cta-mfe rounded-sm'));
-    await driver.wait(until.elementIsVisible(cartItem3),3000);
-    await cartItem3.click();
+    let addToCart = await driver.findElement(By.className('btn btn-success dellmetrics-browseconfig atc-cta-mfe rounded-sm'));
+    await driver.wait(until.elementIsVisible(addToCart),3000);
+    await addToCart.click();
 
     let resultMessage = await driver.findElement(By.className('cart mh-flyout-link'));
     let resultValue = await resultMessage.getAttribute("cart-count-label")

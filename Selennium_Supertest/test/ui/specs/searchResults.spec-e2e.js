@@ -2,7 +2,7 @@ const {Builder, By} = require('selenium-webdriver');
 require("dotenv").config();
 const requestUrl = process.env.DEV_UI_ENDPOINT;
 
-describe('Google Search', function() {
+describe('Searching for Results on Dell', function() {
   let driver;
 
   beforeEach(() => {
