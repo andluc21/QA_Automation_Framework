@@ -29,7 +29,7 @@ $ npm run test:api
 
 ## Testing Endpoints (All Environments)
 
-1. You will need to set the UI and API public endpointto match the environment you are testing in.
+1. You will need the UI and API public endpoints within the environment file to run the automation.
 
 ```bash
 # ui endpoint:
