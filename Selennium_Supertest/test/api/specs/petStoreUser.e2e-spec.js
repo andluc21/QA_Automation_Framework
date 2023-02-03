@@ -1,5 +1,5 @@
 const { getRequest, postRequest, putRequest } = require("../services.js/httpUtil");
-const password = process.env.USER_PASS;
+const password = 'madeUpPass100'
 const username = 'madeUpUserName100'
 
 describe("Pet Store Inventory", () => {
