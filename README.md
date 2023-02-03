@@ -24,7 +24,7 @@ DEV_UI_ENDPOINT= <'UI URL HERE'>
 
 ```
 
-## Running the Automation
+## Testing
 
 To run the automation suites, run the following:
 
