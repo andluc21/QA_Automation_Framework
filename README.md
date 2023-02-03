@@ -4,16 +4,27 @@
 
 Selennium UI and Supertest API automation framework
 
-## Installation
 
-
+## Setting up the project
 ```bash
+cd Selennium_Supertest
 
+# Install deps
 npm install
+
+# Copy Pet Store API into .env file
+# You can visit https://petstore.swagger.io/v2
+
+DEV_API_ENDPOINT= <'API URL HERE'>
+
+# Copy Dell url into .env file
+# https://www.dell.com/en-us
+
+DEV_UI_ENDPOINT= <'UI URL HERE'>
+
 ```
 
-
-## Testing
+## Running the Automation
 
 To run the automation suites, run the following:
 
@@ -24,18 +35,5 @@ $ npm run test:ui
 
 # api e2e tests
 $ npm run test:api
-
-```
-
-## Testing Endpoints (All Environments)
-
-1. You will need the UI and API public endpoints within the environment file to run the automation.
-
-```bash
-# ui endpoint:
-'https://www.dell.com/en-us'
-
-# api endpoint:
-'https://petstore.swagger.io/v2'
 
 ```
