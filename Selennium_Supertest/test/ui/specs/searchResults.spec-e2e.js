@@ -34,7 +34,6 @@ describe('Searching for Results on Dell', function() {
     // Assert the expected result value
     expect(resultValue).toEqual('Sorry, there are no results for "webdriver"');
 
-    // await new Promise((resolve) => setTimeout(resolve, 1100500)); // Pause 
   });
 
   afterEach(() => {
