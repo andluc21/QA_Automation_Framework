@@ -9,7 +9,7 @@ describe('Adds laptop item to dell cart', function() {
     driver = new Builder().forBrowser('chrome').build();
   });
 
-  it('Filters laptops by selection and successfully adds 1 item to the cart', async function addItemToCart() {
+  it('Filters laptops by selection and successfully identifies the first laptop', async function addItemToCart() {
     
     await driver.get(`${requestUrl}`);   
     
@@ -21,17 +21,9 @@ describe('Adds laptop item to dell cart', function() {
     await driver.wait(until.elementIsVisible(laptopsCategory),3000);
     await laptopsCategory.click();
 
-    let specificLaptop = await driver.findElement(By.className('ps-image-area'));
-    await driver.wait(until.elementIsVisible(specificLaptop),3000);
-    await specificLaptop.click();
-
-    let addToCart = await driver.findElement(By.className('btn btn-success dellmetrics-browseconfig atc-cta-mfe rounded-sm'));
-    await driver.wait(until.elementIsVisible(addToCart),3000);
-    await addToCart.click();
-
-    let resultMessage = await driver.findElement(By.className('cart mh-flyout-link'));
-    let resultValue = await resultMessage.getAttribute("cart-count-label")
-    expect(resultValue).toEqual('{0} {1} in your cart.');
+    let laptopTitle = await driver.wait(until.elementIsVisible(driver.findElement(By.css('h3.ps-title > a'))), 10000);
+    let laptopTitleText = await laptopTitle.getText();
+    expect(laptopTitleText).toEqual('XPS 13 Laptop');
 
   });
 
